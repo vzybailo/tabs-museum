@@ -1,36 +1,62 @@
+body, html {
+    height: 100%;
+    background-color: #E9E9E6;
+}
 ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
+.wrapper {
+    width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+.model {
+    position: relative;
+    z-index: 5;
+}
 .tabs {
     display: flex;
     flex-direction: column;
+    font-family: monospace;
+    position: relative;
+    z-index: 2;
 }
 .tabs-titles__list {
     display: flex;
+    justify-content: center;
 }
 .tabs-titles__item {
-    padding: 26px;
-    border: #000 solid 1px;
+    padding: 15px 25px;
     border-bottom: 0;
     cursor: pointer;
-    width: 100%;
     text-align: center;
-    background-color: #f2f2f2;
+    background-color: #F6F6F5;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-bottom: 4px solid #E9E9E6;
+    margin-right: 15px;
 }
-.tabs-title__item:first-child {
-    border-right: none;
+.tabs-titles__item:last-child {
+    margin-right: 0;
 }
 .tabs-titles__item.active {
-    border: solid 3px #FF1010;
+    background-color: #fff;
+    color: #0077C8;
+    border-bottom: 4px solid #fff;
 }
 .tabs-content__list {
-    border-left: solid 3px #FF1010;
     padding: 45px;
-    background-color: #e6e6e6;
-    font-size: 20px;
+    background-color: #fff;
+    font-size: 18px;
     font-weight: 700;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
 }
 .tabs-content__item {
     display: none;
@@ -38,6 +64,27 @@ ul {
 .tabs-content__item.active {
     display: block;
 }
-.border-bottom {
-    border-bottom: solid 3px #FF1010;
+.axle__list {
+    display: flex;
+}
+.axle__item {
+    margin-right: 32px;
+    background-color: #E0EEF9;
+    cursor: pointer;
+}
+.axle__item.active {
+    outline: 8px solid #0077C8;
+}
+.axle__item:last-child {
+    margin-right: 0;
+}
+.axle__text {
+    padding: 14px;
+}
+.bg {
+    position: absolute;
+    background: linear-gradient(180deg, #B9B9B4 0%, #FFFFFF 93.98%);
+    height: 55vh;
+    width: 99vw;
+    bottom: 0;
 }

@@ -4,63 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <title>tabs js</title>
 </head>
 <body>
-    <div class="tabs">
-        <ul class="tabs-titles__list">
-            <li class="tabs-titles__item" data-tab="1">
-                MOVIES & TV
-            </li>
-            <li class="tabs-titles__item" data-tab="2">
-                ANTIQUES
-            </li>
-            <li class="tabs-titles__item" data-tab="3">
-                CORVETTES
-            </li>
-            <li class="tabs-titles__item" data-tab="4">
-                BRICK-SEUM
-            </li>
-        </ul>
-        <ul class="tabs-content__list">
-            <li id="tab-1" class="tabs-content__item">
-                <img src="" alt="" class="tabs-content__img">
-                <div class="tabs-content__desc">
-                    <div class="tabs-content__title">MOVIES & TV</div>
-                    <div class="tabs-content__text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.
-                    </div>
-                </div>
-            </li>
-            <li id="tab-2" class="tabs-content__item">
-                <img src="" alt="" class="tabs-content__img">
-                <div class="tabs-content__desc">
-                    <div class="tabs-content__title">ANTIQUES</div>
-                    <div class="tabs-content__text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.
-                    </div>
-                </div>
-            </li>
-            <li id="tab-3" class="tabs-content__item">
-                <img src="" alt="" class="tabs-content__img">
-                <div class="tabs-content__desc">
-                    <div class="tabs-content__title">CORVETTES</div>
-                    <div class="tabs-content__text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.
-                    </div>
-                </div>
-            </li>
-            <li id="tab-4" class="tabs-content__item">
-                <img src="" alt="" class="tabs-content__img">
-                <div class="tabs-content__desc">
-                    <div class="tabs-content__title">BRICK-SEUM</div>
-                    <div class="tabs-content__text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborumnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.
-                    </div>
-                </div>
-            </li>
-        </ul>
+    <div class="wrapper">
+        <div class="model">
+            <div class="model-viewer-wrapper">    
+                <div id="modelContainer"></div>
+            </div>
+        </div>
+        <div class="tabs">
+            <ul class="tabs-titles__list">
+                <li class="tabs-titles__item" data-tab="1">
+                    bumper pull
+                </li>
+                <li class="tabs-titles__item" data-tab="2">
+                    gooseneck
+                </li>
+            </ul>
+            <ul class="tabs-content__list">
+                <li id="tab-1" class="tabs-content__item"> 
+                    <ul class="axle__list">
+                        <li class="axle__item" data-model="https://s3.us-east-2.amazonaws.com/ar.texaspridetrailers.com/texas-pride-trailer_dump_bp_tandem_14k.glb">
+                            <img src="images/tandem-axle.png" alt="" class="axle__img">
+                            <div class="axle__text">Tandem Axle</div>
+                        </li>
+                        <li class="axle__item" data-model="https://s3.us-east-2.amazonaws.com/ar.texaspridetrailers.com/texas-pride-trailer_dump_bp_triple_27k.glb">
+                            <img src="images/triple-axle.png" alt="" class="axle__img">
+                            <div class="axle__text">Triple Axle</div>
+                        </li>
+                        <li class="axle__item" data-model="https://s3.us-east-2.amazonaws.com/ar.texaspridetrailers.com/texas-pride-trailer_dump_bp_dual_26k.glb">
+                            <img src="images/dual-wheel.png" alt="" class="axle__img">
+                            <div class="axle__text">Dual Wheel</div>
+                        </li>
+                    </ul>     
+                </li>
+                <li id="tab-2" class="tabs-content__item">
+                    <ul class="axle__list">
+                        <li class="axle__item">
+                            <img src="images/tandem-axle.png" alt="" class="axle__img">
+                            <div class="axle__text">Tandem Axle</div>
+                        </li>
+                        <li class="axle__item">
+                            <img src="images/triple-axle.png" alt="" class="axle__img">
+                            <div class="axle__text">Triple Axle</div>
+                        </li>
+                        <li class="axle__item">
+                            <img src="images/dual-wheel.png" alt="" class="axle__img">
+                            <div class="axle__text">Dual Wheel</div>
+                        </li>
+                    </ul> 
+                </li>
+            </ul>
+        </div>
+        <div class="bg"></div>
     </div>
     <script src="scripts.js"></script>
 </body>

@@ -52,6 +52,8 @@ ul {
     border-bottom: 4px solid #fff;
 }
 .tabs-content__list {
+    display: flex;
+    justify-content: center;
     padding: 45px;
     background-color: #fff;
     font-size: 18px;
@@ -59,26 +61,19 @@ ul {
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
 }
 .tabs-content__item {
-    display: none;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.tabs-content__item.active {
+    outline: 8px solid #0077C8;
+}
+.tabs-content__item:last-child {
+    margin-right: 0;
 }
 .tabs-content__item.active {
     display: block;
 }
-.axle__list {
-    display: flex;
-}
-.axle__item {
-    margin-right: 32px;
-    background-color: #E0EEF9;
-    cursor: pointer;
-}
-.axle__item.active {
-    outline: 8px solid #0077C8;
-}
-.axle__item:last-child {
-    margin-right: 0;
-}
-.axle__text {
+.tabs-content__item-text {
     padding: 14px;
 }
 .bg {
@@ -87,4 +82,33 @@ ul {
     height: 55vh;
     width: 99vw;
     bottom: 0;
+}
+.check {
+    position: relative;
+    z-index: 2;
+}
+input.check__link {
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: 10px;
+}
+input.check__link:focus-visible {
+    border: none;
+    outline: none;
+}
+button#checkBtn {
+    padding: 10px;
+    border: none;
+    text-transform: uppercase;
+    background-color: mediumseagreen;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button#checkBtn:hover {
+    transition: 0.3s;
+    background-color: green;
 }

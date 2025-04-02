@@ -40,13 +40,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // test part, remove after testing
     const testURL = document.querySelector('.check__link')
     const testBtn = document.querySelector('#checkBtn')
-    let =  ""
+    let category =  ""
 
     testBtn.addEventListener('click', () => {
         const pageURL = testURL.value.trim()
-        category = highlightCategoryFromURL(pageURL, keywords);
-        
-        generateTabs(category)
+        if(category = highlightCategoryFromURL(pageURL, keywords)) {
+            generateTabs(category)
+            tabsContainer.style.display='block' 
+        } else {
+            alert ('Incorrect link') 
+            tabsContainer.style.display='none' 
+            return
+        }
     })
 
     //const pageURL = window.location.pathname     add this when this code will transfer to wp
@@ -106,14 +111,16 @@ document.addEventListener('DOMContentLoaded', () => {
             tabItem.classList.add('tabs-content__item')
             tabItem.setAttribute('data-model', subType)
 
+            const subTypeTitle = subType.replace('_', ' ')
+
             const axleImg = document.createElement('img')
             axleImg.classList.add('tabs-content__item-img')
-            axleImg.src = `images/${subType}.png` 
+            axleImg.src = `images/${type}-${subType}.png` 
             axleImg.alt = subType
     
             const axleText = document.createElement('div')
             axleText.classList.add('tabs-content__item-text')
-            axleText.textContent = subType
+            axleText.textContent = subTypeTitle
 
             tabItem.appendChild(axleImg)
             tabItem.appendChild(axleText)
@@ -139,10 +146,20 @@ document.addEventListener('DOMContentLoaded', () => {
     generateTabs()
 })
 
+const modelCache = {}
+
 function loadModel(modelSrc) {
     return new Promise((resolve) => {
         const modelContainer = document.querySelector('#modelContainer')
         if (!modelContainer) return
+
+        if (modelCache[modelSrc]) {
+            const modelViewer = modelContainer.querySelector('model-viewer')
+            if (modelViewer) {
+                modelViewer.setAttribute('src', modelSrc)
+            }
+            return resolve(modelCache[modelSrc])
+        }
 
         const modelViewer = document.createElement('model-viewer')
         modelViewer.setAttribute('src', modelSrc)
@@ -156,6 +173,7 @@ function loadModel(modelSrc) {
         modelViewer.style.height = '800px'
 
         modelViewer.addEventListener('load', function () {
+            modelCache[modelSrc] = modelViewer
             resolve(modelViewer)
         })
 
